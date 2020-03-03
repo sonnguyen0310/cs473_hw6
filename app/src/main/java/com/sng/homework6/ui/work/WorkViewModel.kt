@@ -1,13 +1,13 @@
-package com.sng.homework6.ui.notifications
+package com.sng.homework6.ui.work
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 
-class NotificationsViewModel : ViewModel() {
+class WorkViewModel : ViewModel() {
 
     private val _text = MutableLiveData<String>().apply {
-        value = "This is notifications Fragment"
+        value = "This is Work Fragment"
     }
     val text: LiveData<String> = _text
 }

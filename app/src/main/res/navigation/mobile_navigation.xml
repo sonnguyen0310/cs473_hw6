@@ -12,14 +12,19 @@
         tools:layout="@layout/fragment_home" />
 
     <fragment
-        android:id="@+id/navigation_dashboard"
-        android:name="com.sng.homework6.ui.dashboard.DashboardFragment"
-        android:label="@string/title_dashboard"
-        tools:layout="@layout/fragment_dashboard" />
+        android:id="@+id/navigation_about_me"
+        android:name="com.sng.homework6.ui.aboutMe.AboutMeFragment"
+        android:label="@string/title_about_me"
+        tools:layout="@layout/fragment_work" />
 
     <fragment
-        android:id="@+id/navigation_notifications"
-        android:name="com.sng.homework6.ui.notifications.NotificationsFragment"
-        android:label="@string/title_notifications"
-        tools:layout="@layout/fragment_notifications" />
+        android:id="@+id/navigation_work"
+        android:name="com.sng.homework6.ui.work.WorkFragment"
+        android:label="@string/title_work"
+        tools:layout="@layout/fragment_about_me" />
+    <fragment
+        android:id="@+id/navigation_contact"
+        android:name="com.sng.homework6.ui.contact.ContactFragment"
+        android:label="@string/title_contact"
+        tools:layout="@layout/contact_fragment"/>
 </navigation>

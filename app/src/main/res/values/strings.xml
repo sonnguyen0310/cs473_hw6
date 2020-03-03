@@ -1,6 +1,7 @@
 <resources>
     <string name="app_name">Homework6</string>
     <string name="title_home">Home</string>
-    <string name="title_dashboard">Dashboard</string>
-    <string name="title_notifications">Notifications</string>
+    <string name="title_about_me">About Me</string>
+    <string name="title_work">Work</string>
+    <string name="title_contact">Contact</string>
 </resources>
