@@ -15,7 +15,7 @@ import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
     private val fragments =
-        arrayListOf(HomeFragment(), WorkFragment(), AboutMeFragment(), ContactFragment())
+        arrayListOf(HomeFragment(), AboutMeFragment(), WorkFragment(),  ContactFragment())
 
     var mPager: ViewPager? = null
     override fun onCreate(savedInstanceState: Bundle?) {
