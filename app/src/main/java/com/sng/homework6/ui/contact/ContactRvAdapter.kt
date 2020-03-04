@@ -7,7 +7,8 @@ import androidx.recyclerview.widget.RecyclerView
 import com.sng.homework6.R
 import com.sng.homework6.model.Contact
 
-class ContactRvAdapter(val list: ArrayList<Contact>?) : RecyclerView.Adapter<Vh>() {
+class ContactRvAdapter(val list: ArrayList<Contact>?, callback: ContactCallBack) :
+    RecyclerView.Adapter<Vh>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): Vh {
         val itemView =
             LayoutInflater.from(parent?.context).inflate(R.layout.contact_item_view, parent, false)
@@ -23,6 +24,7 @@ class ContactRvAdapter(val list: ArrayList<Contact>?) : RecyclerView.Adapter<Vh>
     }
 
     override fun onBindViewHolder(holder: Vh, position: Int) {
+
     }
 
 }
