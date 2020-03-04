@@ -8,7 +8,6 @@ import android.view.View
 import android.view.ViewGroup
 
 import com.sng.homework6.R
-import com.sng.homework6.manager.CvManager
 
 class ContactFragment : Fragment() {
 
