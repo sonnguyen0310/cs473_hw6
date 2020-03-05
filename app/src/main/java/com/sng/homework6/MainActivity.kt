@@ -1,6 +1,10 @@
 package com.sng.homework6
 
 import android.os.Bundle
+import android.view.Menu
+import android.view.MenuInflater
+import android.view.MenuItem
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
@@ -62,6 +66,19 @@ class MainActivity : AppCompatActivity() {
         override fun getCount(): Int {
             return mFragmentList.size
         }
+    }
+
+     override fun onCreateOptionsMenu(menu: Menu?):Boolean {
+        super.onCreateOptionsMenu(menu)
+         menuInflater.inflate(R.menu.bottom_nav_menu,menu)
+         return true
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem?): Boolean {
+        when(item?.itemId){
+            R.id.navigation_home -> Toast.makeText(applicationContext,"HOME CLICKED",Toast.LENGTH_SHORT).show()
+        }
+        return super.onOptionsItemSelected(item)
     }
 
 
