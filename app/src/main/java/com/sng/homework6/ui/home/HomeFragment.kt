@@ -40,15 +40,14 @@ class HomeFragment : Fragment(),OnFragmentClickListener {
 
 
         homeRecyclerview.hasFixedSize()
-        myAdapter = MyAdapter(homeViewModel.mUser.value?.achievements as List<Achievement>,this)
+        homeRecyclerview.isNestedScrollingEnabled=false
+        myAdapter = MyAdapter(homeViewModel.getAchievements().value!!,this)
         homeRecyclerview.adapter = myAdapter
         homeRecyclerview.layoutManager = LinearLayoutManager(activity)
         return root
     }
 
-    override fun onFragmentClick(achievement: Achievement) {
-
-    }
+    override fun onFragmentClick(achievement: Achievement) {}
 }
 
 class MyAdapter(val alist :List<Achievement>,private val clickListener: OnFragmentClickListener):RecyclerView.Adapter<MyAdapter.ViewHolder>(){

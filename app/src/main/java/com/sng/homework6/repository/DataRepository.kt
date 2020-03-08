@@ -1,6 +1,7 @@
 package com.sng.homework6.repository
 
 import android.util.Log
+import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import com.sng.homework6.R
 import com.sng.homework6.model.Achievement
@@ -11,6 +12,7 @@ import kotlinx.android.synthetic.main.contact_item_view.view.*
 class DataRepository {
   var dataRepository:DataRepository?=null
   var user: MutableLiveData<User> = MutableLiveData()
+    var achievements:MutableLiveData<MutableList<Achievement>> = MutableLiveData()
 
     fun getInstance():DataRepository{
         if(dataRepository==null){
@@ -27,13 +29,18 @@ class DataRepository {
         addUserAchievement(muser)
         addUserBlogs(muser )
         getUserAchievements(muser)
+         populateAchievements()
         user.value = muser
     }
 
     private fun getUserAchievements(user: User){
-        user.achievements.forEach {
+        user.achievements.value?.forEach {
             Log.d("myuser","$it")
         }
+    }
+
+    fun getAchievments():LiveData<List<Achievement>>{
+        return user.value?.achievements as LiveData<List<Achievement>>
     }
 
     private fun addUserBlogs(user: User){
@@ -62,10 +69,27 @@ class DataRepository {
         val achievements = mutableListOf(
             Achievement("I've built 150 android mobile apps and counting","Mobile App Development"),
             Achievement("Developed complete enterprise software with spring framework","Enterprise Software development"),
+            Achievement("Developed complete angular application","Web Applications fff"),
+            Achievement("Developed complete angular application","Web Applications fff"),
+            Achievement("Developed complete angular application","Web Applications fff"),
+            Achievement("I developed 3D first shooter game for up to 30 companies","Game Application development")
+        )
+        user.achievements.value?.addAll(achievements)
+    }
+
+    fun populateAchievements(){
+        var mList = mutableListOf(
+            Achievement("I've built 150 android mobile apps and counting","Mobile App Development"),
+            Achievement("Developed complete enterprise software with spring framework","Enterprise Software development"),
             Achievement("Developed complete angular application","Web Applications"),
             Achievement("I developed 3D first shooter game for up to 30 companies","Game Application development")
         )
-        user.achievements.addAll(achievements)
+        achievements.value = mList
+
+    }
+
+    fun getAchievements():LiveData<List<Achievement>>{
+        return  achievements as LiveData<List<Achievement>>
     }
 
 }
