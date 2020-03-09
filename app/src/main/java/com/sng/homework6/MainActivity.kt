@@ -10,6 +10,7 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentStatePagerAdapter
 import androidx.viewpager.widget.ViewPager
+import com.google.android.material.snackbar.Snackbar
 import com.sng.homework6.ui.aboutMe.AboutMeFragment
 import com.sng.homework6.ui.contact.ContactFragment
 import com.sng.homework6.ui.home.HomeFragment
@@ -70,13 +71,13 @@ class MainActivity : AppCompatActivity() {
 
      override fun onCreateOptionsMenu(menu: Menu?):Boolean {
         super.onCreateOptionsMenu(menu)
-         menuInflater.inflate(R.menu.bottom_nav_menu,menu)
+         menuInflater.inflate(R.menu.option_menu,menu)
          return true
     }
 
     override fun onOptionsItemSelected(item: MenuItem?): Boolean {
         when(item?.itemId){
-            R.id.navigation_home -> Toast.makeText(applicationContext,"HOME CLICKED",Toast.LENGTH_SHORT).show()
+            R.id.about_this -> Toast.makeText(applicationContext,"This app create by Team 1",Toast.LENGTH_LONG).show()
         }
         return super.onOptionsItemSelected(item)
     }

@@ -4,4 +4,5 @@
     <string name="title_about_me">About Me</string>
     <string name="title_work">Work</string>
     <string name="title_contact">Contact</string>
+    <string name="lb_about_this_app">About This App</string>
 </resources>
