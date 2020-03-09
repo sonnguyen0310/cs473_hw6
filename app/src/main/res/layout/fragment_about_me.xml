@@ -56,6 +56,20 @@
                 android:layout_width="match_parent"
                 android:layout_height="20dp" />
 
+            <TextView
+                android:id="@+id/experience"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="Experience"
+                android:textColor="@android:color/darker_gray"
+                android:textSize="24sp"
+                android:textStyle="bold" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="20dp" />
+
             <androidx.cardview.widget.CardView
                 android:id="@+id/cardView"
                 android:layout_width="match_parent"
@@ -63,43 +77,26 @@
                 tools:layout_editor_absoluteX="16dp"
                 tools:layout_editor_absoluteY="16dp">
 
-                <TextView
-                    android:id="@+id/goodId"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Experience  :
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/about_recycleview"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
 
-
-
-Senior Java Developer ,
-
-
-
-
-
-
-
-
-
-
-
-
-
-Responsibilities     :
-Use Java technologies to build web applications for client-server environments.
-Use expertise in Software Development Life Cycle (SDLC) and core Java technologies to create desktop applications that meet client requirements.
-Develop customized, interactive user interfaces using JavaScript, HTML and CSS. I was awarded the Eclipse Award in 2018 for Best Java Application.
-Supervise a team of Java Developers, motivate them to meet team goals, collaborate to improve user experiences and provide training to new employees and interns.
-Merge my Java-based code and the code created by other Java Developers with applications written in C++ and HTML5.
-Use debugging skills to improve the quality of code and improve application performance.Java DeveloperO'Hare ProgrammingAugust 2016
-July 2017Responsibilities:
-Built, integrated and modified web applications according to client specifications.
-Used JavaScript to develop interactive user interfaces (UIs) that provided user experiences that exceeded client expectations and met key performance indicators (KPIs).
-Used Enterprise JavaBeans (EJB) to create large applications for key company clients. I received several commendations from the management for my web applications.
-Worked in a team of web developers, designers and other IT personnel to meet team goals and improve business outcomes.
-Assisted in the onboarding of new web developers.Java Developer intern
-" />
             </androidx.cardview.widget.CardView>
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="20dp" />
+
+            <TextView
+                android:id="@+id/strength"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="Profesional Strength"
+                android:textColor="@android:color/darker_gray"
+                android:textSize="24sp"
+                android:textStyle="bold" />
 
             <Space
                 android:layout_width="match_parent"
@@ -108,16 +105,46 @@ Assisted in the onboarding of new web developers.Java Developer intern
             <androidx.cardview.widget.CardView
                 android:id="@+id/cardView2"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="250dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 tools:layout_editor_absoluteY="71dp">
 
-                <TextView
-                    android:id="@+id/badId"
-                    android:layout_width="wrap_content"
+                <GridView
+                    android:id="@+id/aboutGridId"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:numColumns="3" />
+
+            </androidx.cardview.widget.CardView>
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="20dp" />
+
+            <TextView
+                android:id="@+id/weaknessId"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="Profesional Weakness"
+                android:textColor="@android:color/darker_gray"
+                android:textSize="24sp"
+                android:textStyle="bold" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="20dp" />
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="150dp" >
+
+                <GridView
+                    android:id="@+id/weaknessGridId"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="TextView" />
+                    android:numColumns="3" />
             </androidx.cardview.widget.CardView>
 
         </LinearLayout>
