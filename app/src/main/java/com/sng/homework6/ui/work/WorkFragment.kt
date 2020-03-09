@@ -37,6 +37,16 @@ class WorkFragment : Fragment() {
         fmanager = getActivity()?.getSupportFragmentManager()!!
 
 
+
+
+        workViewModel =
+            ViewModelProviders.of(this).get(WorkViewModel::class.java)
+        val root = inflater.inflate(R.layout.fragment_work, container, false)
+        return root
+    }
+
+    override fun onResume() {
+        super.onResume()
         val spf = context?.getSharedPreferences("workFile", Context.MODE_PRIVATE)
         // if list exists, convert shared preferences list to kotlin list
         try {
@@ -44,6 +54,7 @@ class WorkFragment : Fragment() {
             var works = Gson().fromJson(workListString, Array<Work>::class.java).toMutableList()
             for (work in works) {
                 workList.add(work)
+                madr?.notifyDataSetChanged()
             }
         } catch (exception: Exception) {
             Toast.makeText(
@@ -51,11 +62,6 @@ class WorkFragment : Fragment() {
                 Toast.LENGTH_SHORT
             ).show()
         }
-
-        workViewModel =
-            ViewModelProviders.of(this).get(WorkViewModel::class.java)
-        val root = inflater.inflate(R.layout.fragment_work, container, false)
-        return root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {

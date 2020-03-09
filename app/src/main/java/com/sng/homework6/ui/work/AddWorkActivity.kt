@@ -56,7 +56,7 @@ class AddWorkActivity : AppCompatActivity() {
             }
             spe?.apply()
 
-
+            finish()
             fmanager = getSupportFragmentManager()
             tx = fmanager.beginTransaction()
             tx.replace(
